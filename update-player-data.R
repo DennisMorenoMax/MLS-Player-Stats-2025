@@ -45,4 +45,4 @@ season_year <- season_info_expanded$season
 
 # Write CSVs with year in the filename
 write_csv(season_info_expanded, paste0("mls_season_", season_year, "_info.csv"))
-write_csv(team_stats_with_info, paste0("mls_", season_year, "_player_stats.csv"))
+write_csv(player_stats_expanded, paste0("mls_", season_year, "_player_stats.csv"))
