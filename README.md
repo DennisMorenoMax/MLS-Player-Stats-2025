@@ -1,8 +1,14 @@
-# Dashboard Overview 📊
+# MLS 2025 Player Analytics: Automated Web Scraping & Power BI Dashboard
+
+## Automated Web Scraping 🔄
+
+The data used in this project is collected through an automated web scraping process built in R. The script retrieves MLS 2025 player statistics from the MLS stats API by iterating through all available pages, converting nested JSON responses into structured tabular data, and exporting the results as CSV files. This process is automated using GitHub Actions, which runs the scraping script on a scheduled basis and updates the repository with the latest data for seamless integration with the Power BI dashboard.
+
+## Dashboard Overview 📊
 
 The report includes four visuals:
 
-## Table Visual (Player Metrics)
+### Table Visual (Player Metrics)
 
 A detailed table displaying:
 
@@ -26,7 +32,7 @@ This table allows quick comparison of player contributions and finishing perform
 
 ![](images_pbviz/player_ranking_east_conf.png)
 
-## Scatter Plot (Goals vs xG)
+### Scatter Plot (Goals vs xG)
 
 A scatter chart plotting:
 
@@ -42,7 +48,7 @@ Underperformers xG
 
 ![](images_pbviz/goals_vs_xg_intermiami.png)
 
-## Filters & Slicers 🔍
+### Filters & Slicers 🔍
 
 The dashboard includes interactive slicers for:
 
@@ -57,3 +63,4 @@ The dashboard includes interactive slicers for:
 These allow users to dynamically explore performance across teams and player usage levels.
 
 Maintained by Dennis Moreno
+
