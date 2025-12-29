@@ -2,7 +2,9 @@
 
 ## Automated Web Scraping 🔄
 
-The data used in this project is collected through an automated web scraping process built in R. The script retrieves MLS 2025 player statistics from the MLS stats API by iterating through all available pages, converting nested JSON responses into structured tabular data, and exporting the results as CSV files. This process is automated using GitHub Actions, which runs the scraping script on a scheduled basis and updates the repository with the latest data for seamless integration with the Power BI dashboard.
+The data used in this project is collected through an automated web scraping process built in R. The script retrieves MLS 2025 player statistics from the MLS stats API by iterating through all available pages, converting nested JSON responses into structured tabular data, and exporting the results as CSV files. 
+
+This process is automated using GitHub Actions, which runs the scraping script on a scheduled basis and updates the repository with the latest data for seamless integration with the Power BI dashboard.
 
 ## Dashboard Overview 📊
 
@@ -63,5 +65,6 @@ The dashboard includes interactive slicers for:
 These allow users to dynamically explore performance across teams and player usage levels.
 
 Maintained by Dennis Moreno
+
 
 
