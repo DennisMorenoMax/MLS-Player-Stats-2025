@@ -1,48 +1,31 @@
 library(httr)
 library(jsonlite)
 library(dplyr)
-library(tidyr)
 library(readr)
 
-# Teams
-# url <- "https://stats-api.mlssoccer.com/statistics/clubs/competitions/MLS-COM-000001/seasons/MLS-SEA-0001K9?per_page=50"
-get_mls_data <- function() {
-  # Players
-  url <- "https://stats-api.mlssoccer.com/statistics/players/competitions/MLS-COM-000001/seasons/MLS-SEA-0001K9?per_page=50"
+base_url <- "https://sportapi.mlssoccer.com/api/stats/players/competition/MLS-COM-000001/season/MLS-SEA-0001K9/order/goals/desc?pageSize=30&page="
+
+all_pages <- 1:34
+
+# Initialize empty tibble to store all pages
+all_data <- tibble()
+
+for (page in all_pages) {
+  url <- paste0(base_url, page)
+  message("Fetching page ", page, "...")
   
   res <- httr::GET(url)
   stop_for_status(res)
   
-  data <- jsonlite::fromJSON(content(res, "text"))
-
-  season_info <- as_tibble(data$stats_info)
-  player_stats   <- as_tibble(data$player_statistics)
-
-  list(season_info = season_info, player_stats = player_stats)
+  # Convert JSON to R object (already flattened) therefore no need to expand list
+  data <- jsonlite::fromJSON(content(res, "text"), flatten = TRUE)
+  
+  # Convert to tibble (if not already)
+  data_tibble <- as_tibble(data)
+  
+  # Stack it
+  all_data <- bind_rows(all_data, data_tibble)
 }
 
-expand_lists <- function(df) {
-  repeat {
-    list_cols <- names(df)[sapply(df, function(x) is.list(x) || is.matrix(x))]
-    if (length(list_cols) == 0) break
-    
-    for (col in list_cols) {
-      df <- df %>% unnest_wider(all_of(col), names_sep = paste0("_", col))
-    }
-  }
-  return(df)
-}
-
-# Fetch both tables
-mls <- get_mls_data()
-
-# Expand nested columns
-season_info_expanded <- expand_lists(mls$season_info)
-player_stats_expanded  <- expand_lists(mls$player_stats)
-
-# Extract season year for filenames
-season_year <- season_info_expanded$season
-
-# Write CSVs with year in the filename
-write_csv(season_info_expanded, paste0("mls_season_", season_year, "_info.csv"))
-write_csv(player_stats_expanded, paste0("mls_", season_year, "_player_stats.csv"))
+# Save CSV
+write_csv(all_data, "mls_2025_player_stats.csv")
