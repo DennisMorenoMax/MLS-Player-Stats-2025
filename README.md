@@ -6,7 +6,7 @@ The data used in this project is collected through an automated web scraping pro
 
 ## Dashboard Overview 📊
 
-The report includes four visuals:
+The report "**player_stats_viz.pbix**" includes the following visuals:
 
 ### Table Visual (Player Metrics)
 
@@ -63,4 +63,5 @@ The dashboard includes interactive slicers for:
 These allow users to dynamically explore performance across teams and player usage levels.
 
 Maintained by Dennis Moreno
+
 
