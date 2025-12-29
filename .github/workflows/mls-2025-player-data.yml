@@ -50,7 +50,6 @@ jobs:
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
           git add mls_2025_player_stats.csv
-          git add mls_season_2025_info.csv
           git commit -m 'MLS Data updated' || echo "No changes to commit"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git push origin HEAD:main || echo "No changes to commit"
