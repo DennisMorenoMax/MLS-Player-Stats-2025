@@ -31,6 +31,7 @@ A detailed table displaying:
 - xG Efficiency (Goals − xG)
 
 This table allows quick comparison of player contributions and finishing performance.
+The team logos are from [**this repository**](https://github.com/DennisMorenoMax/USA-Soccer-Team-Logos)
 
 ![](images_pbviz/player_ranking_east_conf.png)
 
@@ -65,6 +66,7 @@ The dashboard includes interactive slicers for:
 These allow users to dynamically explore performance across teams and player usage levels.
 
 Maintained by Dennis Moreno
+
 
 
 
