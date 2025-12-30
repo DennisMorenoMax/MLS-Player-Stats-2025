@@ -65,7 +65,14 @@ The dashboard includes interactive slicers for:
 
 These allow users to dynamically explore performance across teams and player usage levels.
 
+## 🙌 Acknowledgments
+
+Data provided from publicly accessible MLS resources:
+
+https://www.mlssoccer.com/stats/clubs/#season=MLS-SEA-0001K9&statType=general
+
 Maintained by Dennis Moreno
+
 
 
 
