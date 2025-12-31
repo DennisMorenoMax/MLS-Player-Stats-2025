@@ -1,1 +1,1 @@
-echo ".Rhistory" >> .gitignore
+.Rhistory
