@@ -52,4 +52,4 @@ jobs:
           git add mls_2025_player_stats.csv
           git commit -m 'MLS Data updated' || echo "No changes to commit"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git push origin HEAD:main || echo "No changes to commit"
+          git push origin HEAD:master || echo "No changes to commit"
