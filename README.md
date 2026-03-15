@@ -1,4 +1,4 @@
-# MLS 2025 Player Analytics: Automated Web Scraping & Power BI Dashboard
+# MLS 2025 Player Statistics: Automated Web Scraping & Power BI Dashboard
 
 ## Automated Web Scraping 🔄
 
